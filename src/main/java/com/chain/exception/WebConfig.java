@@ -1,6 +1,7 @@
 package com.chain.exception;
 
 import com.chain.exception.resolver.MyHandlerExceptionResolver;
+import com.chain.exception.resolver.UserHandlerExceptionResolver;
 import com.chain.exception.servlet.filter.LogFilter;
 import com.chain.exception.servlet.interceptor.LogInterceptor;
 import jakarta.servlet.DispatcherType;
@@ -37,5 +38,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
         resolvers.add(new MyHandlerExceptionResolver());
+        resolvers.add(new UserHandlerExceptionResolver());
     }
 }
